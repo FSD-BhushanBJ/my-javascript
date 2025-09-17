@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seat Booking</title>
+  <style>
+    .seat {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      color: white;
+    }
+    .available { background-color: green; }  /* free */
+    .booked { background-color: rgb(242, 0, 0); }      /* booked */
+  </style>
+</head>
+<body>
+  <h3>Seat Booking (3 x 5)</h3>
+  <div id="seating"></div>
+  <br>
+  <button id="bookBtn">Book Next Seat</button>
+
+  <script>
+    // Step 1: make 3x5 array
+    let seats = [];
+    for (let i = 0; i < 3; i++) {
+      seats.push([]);
+      for (let j = 0; j < 5; j++) {
+        seats[i].push("available");
+      }
+    }
+
+    // Step 2: show seats
+    let seatingDiv = document.getElementById("seating");
+    let seatButtons = []; // store button references
+
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 5; j++) {
+        let btn = document.createElement("button");
+        btn.className = "seat available";
+        btn.innerText = (i * 5 + j + 1); // seat number
+        seatingDiv.appendChild(btn);
+        seatButtons.push(btn);
+      }
+      seatingDiv.appendChild(document.createElement("br"));
+    }
+
+    // Step 3: Book seat one by one with button
+    let currentSeat = 0;
+    document.getElementById("bookBtn").addEventListener("click", function() {
+      if (currentSeat < seatButtons.length) {
+        seatButtons[currentSeat].classList.remove("available");
+        seatButtons[currentSeat].classList.add("booked");
+        seatButtons[currentSeat].innerText = "✔";
+        console.log("Seat " + (currentSeat + 1) + " booked");
+        currentSeat++;
+      } else {
+        alert("All seats booked!");
+      }
+    });
+  </script>
+</body>
+</html>

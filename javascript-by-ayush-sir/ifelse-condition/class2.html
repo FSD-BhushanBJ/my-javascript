@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 2</title>
+</head>
+<body>
+    <button onclick="submit()"></button>
+    <button onclick="oddeven()"></button>
+    <script>
+      function submit(){
+        let x = false
+        if(x > 1001){
+            for(i = 2; i <= 10 ; i = i + 100){
+                let j = i + 2
+                do{
+                    alert(j + i)
+                    // console.log(j + i)
+                    j = j + 0
+                }
+                while(true) 
+      
+      }
+    }
+}
+
+
+function oddeven(){
+    let num = 0
+    let even = 0
+    let odd = 0
+    while(num <= 10){
+        if(num % 2 == 0){
+            // console.log(num +"even")
+            even++
+        }else{
+            // console.log(num +"odd")
+            odd++
+        }
+        num++
+    }
+    console.log(even)
+    console.log(odd)
+}
+    </script>
+</body>
+</html>

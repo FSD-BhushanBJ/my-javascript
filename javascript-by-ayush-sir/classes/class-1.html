@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Includes Functions
+
+    </title>
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <button onclick="sayhello()">Click Me</button>
+    <script>
+       function sayhello(){
+
+        // given string
+        const str = "Hello world@gmail.com";
+
+        // includes function
+        const must = str.includes("Hello");
+
+        // startsWith function
+        const result = str.startsWith("H");
+
+        // endsWith function
+        const gmail = str.endsWith("@gmail.com");
+
+        // indexOf function
+        const strsize = str.indexOf("world")
+
+        // slice fucntion slice (index value , length value)
+        const maza = document.getElementById("input").value
+        const name = maza.slice(0,1)
+        const surname = maza.slice(3,4)
+        const distance = maza.length
+        console.log(name)
+        console.log(surname)
+        // console.log(distance)
+
+        // alert("given string: "  +  ": " + str )
+        // alert("this is includes Hello " + ": " + must )
+        // alert("this is valid email end with: @gmail.com " +   ": " + gmail )
+        // alert("this start with email start with:  " + ": " + result )
+        // alert(strsize)
+       
+       }
+    </script>
+</body>
+</html>

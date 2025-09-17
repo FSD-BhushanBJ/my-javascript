@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Pairs</title>
+</head>
+<body>
+    <script>
+        array =[2,4,6,88,99,90,3,5,9,13]
+        let pairs =[]
+
+        for(let i=0;i<array.length-1;i++){
+            let pair = [array[i],array[i+1]];
+            pairs.push(pair)
+            // for(let j = i +1;j<array.length;j++){
+            //     pairs.push([array[i],array[j]]);
+            // }
+        }
+        console.log(pairs)
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionery in Dictionery</title>
+  </head>
+  <body>
+    <script>
+      let students = [
+        {
+          id: 1,
+          name: "Bhushan",
+          marks: {
+            HTML: 85,
+            CSS: 95,
+            JS: 75,
+          },
+          skills: ["sleeping", "riding"],
+        },
+        {
+          id: 2,
+          name: "Mayank",
+          marks: {
+            HTML: 95,
+            CSS: 95,
+            JS: 85,
+          },
+          skills: ["bunking", "comedian"],
+        },
+        {
+          id: 3,
+          name: "Shruti",
+          marks: {
+            HTML: 89,
+            CSS: 98,
+            JS: 95,
+          },
+          skills: ["dancing", "eating ", "coding", "drawing"],
+        },
+        {
+          id: 4,
+          name: "Ashish",
+          marks: {
+            HTML: 98,
+            CSS: 95,
+            JS: 85,
+          },
+          skills: ["cricket", "photography", "smart"],
+        },
+        {
+          id: 5,
+          name: "Pratik Sir",
+          marks: {
+            HTML: 98,
+            CSS: 100,
+            JS: 99.99,
+          },
+          skills: [
+            "calculations",
+            "logical",
+            "communication",
+            "presentation",
+            "teaching",
+          ],
+        },
+      ];
+
+      //   average of html
+      let htmlAvg = 0;
+      let total = 0;
+      for (let i = 0; i <= students.length - 1; i++) {
+        total += students[i].marks.HTML;
+      }
+
+      htmlAvg = total / students.length;
+
+      console.log("HTML avg is " + htmlAvg);
+
+      // skills
+
+      let maxSkills = 0;
+      let mostskills = "";
+
+      for (let i = 0; i <= students.length - 1; i++) {
+        if (students[i].skills.length > maxSkills) {
+          maxSkills = students[i].skills.length;
+          mostskills = students[i].name;
+        }
+      }
+
+      console.log("Student with most skills: " + mostskills);
+      console.log("Number of skills: " + maxSkills);
+
+      // *******************************************//
+      let maxStudent = students[0];
+
+      for (let s of students) {
+        if (s.skills.length > maxStudent.skills.length) maxStudent = s;
+      }
+
+      console.log(
+        "Most skilled student:",
+        maxStudent.name,
+        "with",
+        maxStudent.skills.length,
+        "skills"
+      );
+
+      //****************** ayush sir *******************//
+
+      let studentName = "";
+      let skilllength = students[0].skills.length;
+      for (let x = 0; x <= students.length - 1; x++) {
+        if (students[x].skills.length > skilllength) {
+          skilllength = students[x].skills.length;
+          studentName = students[x].name;
+        }
+      }
+      console.log("ayush sir array is " + studentName);
+
+      //********************** Total Percentage ***************************//
+
+      for (let y = 0; y <= students.length-1; y++) {
+        let student = students[y];
+
+        let totalMarks =
+          student.marks.HTML + student.marks.CSS + student.marks.JS;
+
+        let percentage = (totalMarks / 300)* 100;
+
+        console.log("Name: " +student.name +", Percentage: " + percentage +"%");
+      }
+      // ***************************************************************** //
+    </script>
+  </body>
+</html>

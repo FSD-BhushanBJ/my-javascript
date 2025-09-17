@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4x4 input array</title>
+  </head>
+  <body>
+    <script>
+      //   let array = [
+      //     [],
+      //     []
+      //   ];
+
+      //   array[0][0] = 1
+      //   array[0][1] = 2
+      //   array[0][2] = 3
+      //   array[0][3] = 4
+      //   array[0][4] = 5
+
+      //   array[1][0] = 5
+      //   array[1][1] = 6
+      //   array[1][2] = 7
+      //   array[1][3] = 8
+      //   array[1][4] = 9
+
+      //   console.log(array)
+
+      let array = [];
+      for (let a = 0; a <= 3; a++) {
+        array.push([]);
+        if (array.length % 2 == 0) {
+          for (let x = 0; x <= 3; x++) {
+            let input = prompt("Enter String");
+            array[a].push(input);
+          }
+        } else {
+          for (let odd = 0; odd <= 3; odd++) {
+            array[a].push(1);
+          }
+        }
+      }
+      console.log(array);
+
+      //   let array = [];
+
+      //   for (let a = 0; a < 4; a++) {
+
+      //     array.push([]); // create empty row
+
+      //     let num = prompt("Enter a number:");
+      //     let str = prompt("Enter a string:");
+
+      //     // push both number and string in same row
+      //     array[a].push(Number(num));
+      //     array[a].push(str);
+      //   }
+
+      //   console.log(array);
+
+      //   for (let i = 0; i < 16; i++) {
+      //     let num = prompt("Enter number " + (i + 1));
+
+      //     array.push(Number(num));
+      //   }
+      //   console.log(array)
+    </script>
+  </body>
+</html>

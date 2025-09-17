@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Book Seat</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+        }
+        .main-container{
+            height: 500px;
+            width: 300px;
+            background-color:rgb(67, 65, 65);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }   
+        .row1{
+            width: 100%;
+            height: 100%;
+            background-color: green;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="main-container" id="bus">
+       
+      
+    </div>
+
+    <script>
+        for(let i = 1;i<= 15; i++){
+            document.getElementById("bus").innerHTML += `<div class="row1" id="${1}" onclick="bookSeat(+)"></div>`
+        }
+
+        const bus = [
+            [0 , 0, 0],
+            [0 , 0, 0],
+            [0 , 0, 0],
+            [0 , 0, 0],
+            [0 , 0, 0]
+        ];
+        let count = 1;
+        let a = 0;
+        let row = 0;
+        let column = 0
+
+        function bookSeat(){
+            bus[row][column] = 1;
+            column++
+            count++
+            if(column == 3){
+                row++;
+                column = 0
+            }
+
+        }
+    </script>
+    <!-- <h1 id="display"></h1>
+    <button onclick="addString()">Change </button>
+    <script>
+        const arr1 =[
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0],
+            [0,0,0,0]
+        ]
+
+      let x = 0;
+      function addString() {
+        let input = prompt("enter a name");
+        if (input.length == 4 && x < 4) {
+          let str = input.split("");
+          arr1[x] = str;
+          x++;
+        }
+        document.getElementById("display").innerHTML = arr1;
+      } -->
+    </script>
+  </body>
+</html>

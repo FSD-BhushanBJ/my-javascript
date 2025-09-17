@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="whileLoop()">WhileLoop</button>
+    <button onclick="reverseString()">Loop</button>
+    <script>
+      function whileLoop(){
+        let x = 1;
+        // let print = " ";
+      
+        while( x <= 10);
+       
+        console.log(x);
+        x++
+       
+      }
+
+      function reverseString(){
+            let input = 1
+            
+
+            for ( let i = input.length -1; i>=0 ; i++){
+                reverseString = reverseString +input[i];
+                document.getElementById("display").innerHTML += reverseString + "<br/>";
+            }
+        }
+    </script>
+</body>
+</html>

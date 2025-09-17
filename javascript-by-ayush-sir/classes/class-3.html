@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 3</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="submit()">Click me</button>
+    <button onclick="patchButton()">Patch me</button>
+    <button onclick="integ()">my int me</button>
+    <button onclick="roundOff()">round function me</button>
+    <button onclick="ground()">int me</button>
+    <script>
+        function submit(){
+            const numb = document.getElementById("input").value
+
+            const user = numb.match(/[A-Z]/g)
+            const pass = numb.match(/[0-9]/g)
+            
+            alert(user)
+            console.log(user)
+        }
+        // abosulut function
+        function patchButton(){
+            let a = 3.2
+          
+
+            const given = a - b
+            const your = Math.abs(given)
+
+            console.log(your)
+        }
+
+
+        // finding nearest
+
+        function integ(){
+            let num = Number(document.getElementById("input").value)
+
+            let round = (num + 0.5) | 0;
+
+            console.log(round)
+        }
+
+        // round function
+        function roundOff(){
+            let num = Number(document.getElementById("input").value)
+
+            let round = Math.round(num);
+
+            console.log(round)
+        }
+
+        // without round function
+
+        function ground(){
+            let num = Number(document.getElementById("input").value)
+
+            let round = num
+
+            if (num + 0.5){
+
+                console.log(round)
+            }else{
+                num = 0
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge Array</title>
+  </head>
+  <body>
+    <h1 id="display"></h1>
+    <script>
+      const array1 = [2, 3, 1, 5];
+      const array2 = [6, 12, 18, 24];
+      const array3 = [5, 3, 5, 8, 9];
+
+      // merge array with concat
+      let mergearray = array1.concat(array2);
+
+      // merge array with spread operator
+      let merge = [...array1, ...array2, ...array3];
+
+      // console.log(mergearray)
+
+      // assending order
+      for (let i = 0; i < merge.length; i++) {
+        for (let j = 0; j < merge.length - 1; j++) {
+          if (merge[j] > merge[j + 1]) {
+            // swap values
+            let temp = merge[j];
+            merge[j] = merge[j + 1];
+            merge[j + 1] = temp;
+          }
+        }
+      }
+
+      console.log("small value " + merge[0]);
+      console.log("large value " + merge[merge.length - 1]);
+
+      // document.getElementById("display").innerHTML = array1 + "," + array2
+      // console.log(array1 + "," + array2)
+
+      //*************************************************************//
+
+      const arr = [1, 2, 3, 10, 15, 4];
+      let x = arr[0];
+      let y = arr[0];
+      for (let i = 0; i <= arr.length - 1; i++) {
+        // biggest value
+        if (x > arr[i]) {
+          x = arr[i];
+
+          // smallest value
+        }
+        if (y < arr[i]) {
+          y = arr[i];
+        }
+      }
+
+      console.log("Biggest value " + x);
+      console.log("Smallest value " + y);
+
+      // *************************** MEAN *********************************//
+
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      let mean = sum / arr.length;
+      console.log("Mean = " + mean);
+
+      // *************************** MEDIAN *********************************//
+
+      let median;
+      if (arr.length % 2 === 0) {
+        let mid1 = arr[arr.length / 2 - 1];
+        let mid2 = arr[arr.length / 2];
+        median = (mid1 + mid2) / 2;
+      } else {
+        median = arr[Math.floor(arr.length / 2)];
+      }
+      console.log("Median = " + median);
+
+      // *************************** RANGE *********************************//
+      let min = arr[0];
+      let max = arr[0];
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) min = arr[i];
+        if (arr[i] > max) max = arr[i];
+      }
+      let range = max - min;
+      console.log("Range = " + range);
+
+      // *************************** Pair for sum of 9 *********************************//
+
+      const arr2 = [1, 2, 3, 4, 5, 6, 7];
+      const total = 9;
+
+      for (let i = 0; i < arr2.length; i++) {
+        for (let j = i + 1; j < arr2.length; j++) {
+          if (arr2[i] + arr2[j] === total) {
+            console.log(arr2[i], arr2[j]);
+          }
+        }
+      }
+      // *************************** Pair for sum of 9  by ayush sir *********************************//
+
+      const array5 = [1,2,3,4,5,6,7]
+      const pair = 10
+      let newArray5 = []
+
+      for ( let i of array5){
+        for(let x = 0; x<= array5.length-1; x++){
+          if(array5[i]+array5[x] === pair && i !== x ){
+
+            newArray5.push([array5[i],array5[x]])
+          }
+        }
+      }
+      console.log(newArray5)
+      // *************************** Pair for avg is 8  by ayush sir *********************************//
+
+      arr3 = [1,2,3,4,5,6,7,8,9,10]
+      let newarr3 = []
+   
+      for(let a of arr3){
+        let n1 = a
+        for(let i of arr3){
+          let n2 = i
+          let result = (n1+n2)/2
+          if(result == 8){
+            newarr3.push({num1 : n1, num2 : n2})
+          }
+        }
+      }
+      console.log(newarr3)
+
+    </script>
+  </body>
+</html>

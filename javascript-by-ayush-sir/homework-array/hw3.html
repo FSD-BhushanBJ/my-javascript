@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seat Booking</title>
+  </head>
+  <body>
+    <button onclick="changeNo()">Change Number</button>
+    <script>
+      //   const array = [[], []];
+      //   let x = 0;
+      //   let y = 1;
+      //   let count = 0;
+      //   function changeNo() {
+      //     if (count == 2) {
+      //       x++;
+      //       y = 0;
+      //     }
+      //     array[x][y] = 1;
+      //     y++;
+      //     count++;
+      //   }
+      //   changeNo();
+
+      let x = 0;
+      let y = 1;
+      let count = 0;
+      const array = [
+        [0, 0],
+      [ 0, 0]
+         ];
+
+      function changeNo() {
+        if (count == 2) {
+          x++;
+          y = 0;
+        }
+        array[x][y] = 1;
+        y++;
+        count++;
+      }
+
+      changeNo();
+      changeNo();
+      changeNo();
+      changeNo();
+
+      console.log(array);
+
+      const arr = [
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+      ]
+    </script>
+  </body>
+</html>

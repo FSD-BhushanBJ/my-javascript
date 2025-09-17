@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actors and Movies</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+        color: #333;
+      }
+
+      #display {
+        max-width: 800px;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        background-color: #ecf0f1;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+      }
+
+      li img {
+        margin-left: 20px;
+        border-radius: 4px;
+      }
+
+      li strong {
+        font-size: 1.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="display"></div>
+    <ul id="sortedList"></ul>
+
+    <script src="actors-data.js"></script>
+    <script>
+      for (let i = 0; i < newData2.length; i++) {
+        let moviesHTML = "";
+        for (let movie of newData2[i].movies) {
+          moviesHTML += `
+            <li>
+              <div>
+                <strong>${movie.name}</strong><br>
+                (${movie.Release_date}) - IMDb: ${movie.IMDB_Rating}
+              </div>
+              <img src="${movie.Image}" width="100" height="100" alt="${movie.Name}">
+            </li>`;
+        }
+
+        document.getElementById("display").innerHTML += `
+        <h2>${newData2[i].name}</h2>
+        <ul>
+            ${moviesHTML}
+        </ul>`;
+      }
+
+//       for (let i = 0; i < newData2.length; i++) {
+//   let a1 = newData2[i];
+
+//   for (let j = i + 1; j < newData2.length; j++) {
+//     let a2 = newData2[j];
+
+//     let a1movies = a1.movies;
+//     let a2movies = a2.movies;
+
+//     for (let movie1 of a1movies) {
+//       let x = movie1.name;
+
+//       for (let movie2 of a2movies) {
+//         console.log("Comparing " + movie1.name + " with " + movie2.name);
+
+//         if (movie2.name == x) {
+//           console.log("Movie match between " + a1.name + " and " + a2.name + ": " + x);
+//           document.getElementById("display").innerHTML +=
+//             "Movie match between " + a1.name + " and " + a2.name + ": " + x + "<br>";
+//         }
+//       }
+//     }
+//   }
+// }
+let maxMovies = 0;
+let actorName = "";
+
+for (let i = 0; i < newData2.length; i++) {
+    let actor = newData2[i];
+    let movieCount = actor.movies.length;
+
+    if (movieCount > maxMovies) {
+        maxMovies = movieCount;
+        actorName = actor.name;
+    }
+}
+
+console.log("Actor with most movies:", actorName, "with", maxMovies, "movies");
+
+let actorsName = "";
+let movieCount = 0
+for (let actor of newData2){
+  if(actor.IMDB_Rating>7){
+    movieCount = actor.movies.length,
+    actorName = actor.name
+  }
+}
+console.log(actorName)
+console.log(movieCount)
+
+// let input = (prompt("enter a name"))
+// for(let actor of newData2){
+//   if(actor.name === input){
+//     console.log(actor.name)
+//     console.log(actor.movies.length)
+//   }
+// }
+// for (let i = 0; i < newData2.length; i++) {
+//     let actor = newData2[i];
+//     console.log("Actor:", actor.name);
+ 
+//     for (let j = 0; j < actor.movies.length; j++) {
+//         let movie = actor.movies[j];
+        
+//         if (movie.IMDB_Rating > 7) {
+//             console.log("  Movie:", movie.name);
+//         }
+//     }
+// }
+let names = [];
+
+// Step 2: Loop through newData2 and add each name to names array
+for (let i = 0; i < newData2.length; i++) {
+    names.push(newData2[i].name);
+}
+
+// Step 3: Sort the names alphabetically
+names.sort();
+
+// Step 4: Display the sorted names
+let list = document.getElementById("sortedList");
+for (let i = 0; i < names.length; i++) {
+    let listItem = document.createElement("li");
+    listItem.textContent = names[i];
+    list.appendChild(listItem);
+} let names1 = [];
+
+// Loop through newData2 and collect the names
+for (let i = 0; i < newData2.length; i++) {
+    names1.push(newData2[i].name);
+}
+
+// Sort the names alphabetically
+names1.sort();
+
+// Print each sorted name in the console
+for (let i = 0; i < names1.length; i++) {
+    console.log(names1[i]);
+}
+
+
+// Grouping by years
+// Object to hold movies grouped by year
+let moviesByYear = {};
+
+// Loop through each actor
+for (let actor of newData2) {
+    // Loop through each movie of the actor
+    for (let movie of actor.movies) {
+        // Some objects have "name", some have "Name", so check both
+        let movieName = movie.name || movie.Name;
+        let year = movie.Release_date;
+
+        // If this year is not in the object yet, create an empty array
+        if (!moviesByYear[year]) {
+            moviesByYear[year] = [];
+        }
+
+        // Add this movie to the array for that year
+        moviesByYear[year].push({
+            actor: actor.name,
+            name: movieName
+        });
+    }
+}
+
+// Now print movies grouped by year
+for (let year in moviesByYear) {
+    console.log(`Year: ${year}`);
+    for (let movie of moviesByYear[year]) {
+        console.log(` - ${movie.name} (${movie.actor})`);
+    }
+    console.log(""); // empty line for better readability
+}
+
+
+
+// old movie and new
+// Start with no oldest or newest movie
+let oldestMovie = null;
+let newestMovie = null;
+
+// Go through all actors
+for (let i = 0; i < newData2.length; i++) {
+    let actor = newData2[i];
+
+    // Go through all movies of this actor
+    for (let j = 0; j < actor.movies.length; j++) {
+        let movie = actor.movies[j];
+
+        // Get the movie name (handle both 'name' and 'Name')
+        let movieName = movie.name || movie.Name;
+
+        // Get the year as a number
+        let year = parseInt(movie.Release_date);
+
+        // Check for oldest movie
+        if (oldestMovie === null || year < oldestMovie.year) {
+            oldestMovie = {
+                name: movieName,
+                year: year,
+                actor: actor.name
+            };
+        }
+
+        // Check for newest movie
+        if (newestMovie === null || year > newestMovie.year) {
+            newestMovie = {
+                name: movieName,
+                year: year,
+                actor: actor.name
+            };
+        }
+    }
+}
+
+// Print the results
+console.log("Oldest Movie:");
+console.log(oldestMovie.name + " (" + oldestMovie.year + ") - " + oldestMovie.actor);
+
+console.log("Newest Movie:");
+console.log(newestMovie.name + " (" + newestMovie.year + ") - " + newestMovie.actor);
+
+
+
+
+// years arrays
+
+
+</script>
+
+
+    </script>
+  </body>
+</html>

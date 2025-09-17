@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array with String</title>
+  </head>
+  <body>
+    <button onclick="addString()"></button>
+    <h1 id="display"></h1>
+
+    <script>
+      const arr1 = [
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+      ];
+
+      const words = ["date", "time", "year", "then"];
+
+      function fillArray() {
+        for (let i = 0; i < arr.length; i++) {
+         
+          for (let j = 0; j < arr[i].length; j++) {
+            
+            arr[i][j] = words[i][j];
+          }
+        }
+      }
+
+      fillArray();
+      console.log(arr);
+      // alert(arr);
+
+
+    // split Function
+      const word = ["date", "time", "year", "then"];
+      const arr2 = [
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+      ];
+
+      for (let i = 0; i <= word.length-1; i++) {
+        arr2[i] = word[i].split("");
+      }
+
+      console.log(arr2);
+      // alert(JSON.stringify(arr2));
+
+      let x = 0
+      function addString(){
+        let input = prompt("enter a name")
+        if(input.length == 4 && x < 4) {
+          let str = input.split
+          arr1[x]= str
+          x++
+        }
+        document.getElementById("display").innerHTML = arr1
+      }
+    </script>
+  </body>
+</html>
+  

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D Array Class</title>
+  </head>
+  <body>
+    <script>
+      const array = [
+        [1, 2, 5],
+        [2, 5, 8],
+        [3, 6, 9],
+      ];
+    let evenCount =[];
+    let oddCount = [];
+    
+          for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array[i].length; j++) {
+            if (j % 2 == 0) {
+
+                evenCount.unshift(j)
+             }else{
+                oddCount.unshift(j)
+             }
+           }
+         }
+        console.log(evenCount);
+        console.log(oddCount)
+
+    </script>
+  </body>
+</html>

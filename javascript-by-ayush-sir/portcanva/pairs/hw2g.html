@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Our input array
+        let array = [2, 4, 6, 88, 89, 90, 3, 5, 9, 13, 15];
+        
+        // This will store the pairs
+        let pairs = [];
+    
+        // Loop through the array, two elements at a time
+        for (let i = 0; i < array.length; i = i + 2) {
+            
+            // Get the first element of the pair
+            let a = array[i];
+            
+            // Check if the next element exists
+            let b;
+            if (i + 1 < array.length) {
+                // If it exists, use it
+                b = array[i + 1];
+            } else {
+                // If it doesn't exist (last element), pair it with 0
+                b = 0;
+            }
+    
+            // Create a pair and add it to the list of pairs
+            pairs.push([a, b]);
+        }
+    
+        // Show the result in the console
+        console.log(pairs);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUSH Operations in Dictionery</title>
+  </head>
+  <body>
+    <script>
+      let data = {
+        bhushan: {
+          name: "Bhushan",
+          roll: 12,
+          age: 26,
+          skills: "html",
+        },
+        mayank: {
+          name: "Mayank",
+          roll: 15,
+          age: 19,
+          skills: "css",
+        },
+        ashish: {
+          name: "Ashish",
+          roll: 18,
+          age: 20,
+          skills: "Javascript",
+        },
+        shruti: {
+          name: "Shruti",
+          roll: 18,
+          age: 20,
+          skills: "Cummunication",
+        },
+        pratiksir: {
+          name: "Pratik-sir",
+          roll: 18,
+          age: 20,
+          skills: "Maths",
+        },
+      };
+      let keyToRemove = prompt("Enter the key of the person you want to remove (like 'john'):");
+
+        delete data[keyToRemove];
+        console.log(keyToRemove + " has been removed.");
+     
+
+     
+      
+      console.log(data);
+
+//       let personKey = prompt("Enter the person's key you want to update (like 'john'):");
+
+// // Ask for the property to remove
+// let propertyKey = prompt("Enter the property you want to remove (name, roll, age, skills):");
+
+// // Remove the property (if it exists, it will be removed; if not, nothing happens)
+// delete data[personKey]?.[propertyKey];
+
+// // Show the updated data
+// console.log(data);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Stamp</title>
+  </head>
+  <body>
+    <input type="text" id="input" />
+    <input type="text" id="input2" />
+    <input type="text" id="input3" />
+    <button onclick="getday()">Submit Button</button>
+    <button onclick="gettime()">Time Button</button>
+    <button onclick="getAge()">Get Age Button</button>
+    <h2 id="display1"></h2>
+    <h1 id="display"></h1>
+    <script>
+              function getday(){
+              const date = new Date("2025-08-03");
+
+              const day = date.getDate()
+              const week = date.getDay()
+              const year = date.getFullYear()
+              const month = date.getMonth()
+             
+
+            //   let format = date + "<br/>" + day + week + year + month
+
+              //Array
+              let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+            //   let getyear = yearss[day];
+
+            //   if(day == 7){
+            //     yearname = "August"
+            //   }else{
+            //     alert("ok")
+            //   }
+
+              let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+              let Today = days[day]
+
+              if(day == 0 || 6){ 
+                  dayname =  "Saturday" || "Sunday"
+
+              }else {
+                  dayname = "today is workday"
+
+              }
+
+              // alert(date)
+              // console.log(day)
+
+              document.getElementById("display").innerHTML ="Date is  " + day + "<br/>" + "Day is  " + dayname + "<br/>" + "Year is  " + year + "<br/>" + "Month is  " + months[month] ;
+
+            //   alert("Date is  " + day + "\n" + "Day is  " + dayname + "\n" + "Year is  " + year + "\n" + "Month is  " + months[month] + "\n" + "Time is  " + time)
+            //       }
+
+                  alert(time)
+            }
+
+
+            function gettime(){ 
+
+                const time = new Date();
+                time.setDate(time.getDate()+5)
+                const get = time.getTime();
+                const hour = time.getHours();
+                const sec = time.getSeconds();
+                const min = time.getMinutes();
+
+               
+                document.getElementById("display1").innerHTML = time
+
+                 document.getElementById("display").innerHTML = hour  + ":" + min + ":" + sec;
+
+                setInterval(gettime,1000)
+                gettime()
+                
+                console.log(hour + ":" + sec + ":" + min)
+
+                
+                
+                // let sec = Math.floor (get / 60 )
+                // let min = Math.floor (get/60000)
+                // let hour = Math.floor (get/ 3600000)
+
+                // let second = Math.floor (sec / 60)
+                // let minute = Math.floor (min / 60000)
+                // let hourse = Math.floor (hour / 3600000)
+              
+                
+
+                // console.log(second)
+                // console.log(minute)
+               
+                // console.log(hourse)
+            }
+
+            function getAge(){
+
+               const today = new Date("2025-08-02");
+               const birth = new Date("1999-10-27");
+
+               let years = today.getFullYear() - birth.getFullYear();
+               let month = today.getMonth() - birth.getMonth();
+               let day = today.getDay() - birth.getDay();
+               let hours = today.getHours() - birth.getHours();
+               let mins = today.getMinutes() - birth.getMinutes();
+
+               console.log( "age "+years ,"Month is " + month ,"Day is " + day ,"hours is " + hours ,"Min is " + mins)
+               
+
+            }
+    </script>
+  </body>
+</html>

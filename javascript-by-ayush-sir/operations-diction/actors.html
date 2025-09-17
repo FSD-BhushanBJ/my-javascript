@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actors List</title>
+  </head>
+  <body>
+    <pre id="display"></pre>
+    <script src="./actors-data.js"></script>
+    <script>
+      //   document.getElementById("display").innerHTML =
+      //     actors.ShahRukhKhan.movie1.name +
+      //     "\n" +
+      //     actors.SalmanKhan.movie1.name +
+      //     "\n" +
+      //     actors.AamirKhan.movie1.name +
+      //     "\n" +
+      //     actors.AmitabhBachchan.movie1.name +
+      //     "\n" +
+      //     actors.AkshayKumar.movie1.name +
+      //     "\n" +
+      //     actors.HrithikRoshan.movie1.name +
+      //     "\n" +
+      //     actors.RanbirKapoor.movie1.name +
+      //     "\n" +
+      //     actors.RanveerSingh.movie1.name +
+      //     "\n" +
+      //     actors.AjayDevgn.movie1.name +
+      //     "\n" +
+      //     actors.VarunDhawan.movie1.name +
+      //     "\n";
+
+      //   console.log(
+      //     actors.ShahRukhKhan.movie1.name +
+      //       "\n" +
+      //       actors.SalmanKhan.movie1.name +
+      //       "\n" +
+      //       actors.AamirKhan.movie1.name +
+      //       "\n" +
+      //       actors.AmitabhBachchan.movie1.name +
+      //       "\n" +
+      //       actors.AkshayKumar.movie1.name +
+      //       "\n" +
+      //       actors.HrithikRoshan.movie1.name +
+      //       "\n" +
+      //       actors.RanbirKapoor.movie1.name +
+      //       "\n" +
+      //       actors.RanveerSingh.movie1.name +
+      //       "\n" +
+      //       actors.AjayDevgn.movie1.name +
+      //       "\n" +
+      //       actors.VarunDhawan.movie1.name +
+      //       "\n"
+      //   );
+
+      //     for (let data of newData) {
+
+      //     document.getElementById("display").innerHTML += data.name + ": " + data.movies[0].name + "<br>"+ data.movies[0].releasedate + "<br>"+ data.movies[0].rating + "<br>";
+      //     console.log(data.name + ": " + data.movies[0].name);
+      // }
+
+      for (let data of newData) {
+        document.getElementById("display").innerHTML += data.name + "<br>";
+
+        for (let movie of data.movies) {
+          document.getElementById("display").innerHTML +=
+            "Movie: " +
+            movie.name +
+            "<br>" +
+            "Release Date: " +
+            movie.releasedate +
+            "<br>" +
+            "Rating: " +
+            movie.rating +
+            "<br><br>";
+
+          // console.log(data.name);
+          // console.log("Movie: " + movie.name);
+          // console.log("Release Date: " + movie.releasedate);
+          // console.log("Rating: " + movie.rating);
+        }
+
+        // document.getElementById("display").innerHTML +=
+        //   "----------------------<br><br>"; // Separator
+      }
+
+//       for (let data of newData) {
+//   let movieArray = data.movies; 
+
+//   for (let movie of movieArray) {
+    
+//     let parts = movie.releasedate.split(" ");
+//     let year = parseInt(parts[2]); 
+
+//     if (year > 2005) {
+//       console.log(movie.name); 
+//     }
+//   }
+// }
+
+// for (let i = 0; i <newData.length;i++){
+//   let a1 = newData[i]
+//   let a2 = newData[i + 1]
+//   let a1movies = a1.movies 
+//   let a2movies = a2.movies
+//   for(let i of a1movies){
+//     let x = i.name
+//     for(let j of a2movies){
+//       if(j.name == x){
+//         console.log("movie match")
+//       }
+//     }
+//   }
+// }
+
+console.log("Script started!");
+
+for (let i = 0; i < newData.length; i++) {
+  let a1 = newData[i];
+
+  for (let j = i + 1; j < newData.length; j++) {
+    let a2 = newData[j];
+
+    let a1movies = a1.movies;
+    let a2movies = a2.movies;
+
+    for (let movie1 of a1movies) {
+      let x = movie1.name;
+
+      for (let movie2 of a2movies) {
+        console.log("Comparing " + movie1.name + " with " + movie2.name);
+
+        if (movie2.name == x) {
+          console.log("Movie match between " + a1.name + " and " + a2.name + ": " + x);
+          document.getElementById("display").innerHTML +=
+            "Movie match between " + a1.name + " and " + a2.name + ": " + x + "<br>";
+        }
+      }
+    }
+  }
+}
+
+
+
+
+      //   for (let i = 0; i < newData.length; i++) {
+      //     console.log("Actor Name: " + newData[i].name);
+
+      //     // Now loop through each movie of the current actor
+      //     for (let j = 0; j < newData[i].movies.length; j++) {
+      //       console.log("  Movie Name: " + newData[i].movies[j].name);
+      //       console.log("  Release Date: " + newData[i].movies[j].releasedate);
+      //       console.log("  Rating: " + newData[i].movies[j].rating);
+      //       console.log("-----------------------"); // Separator for clarity
+      //     }
+      //   }
+
+
+    </script>
+  </body>
+</html>

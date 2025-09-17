@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Printing</title>
+</head>
+<body>
+    <script>
+    const array = [
+        [2, 4, 6, 8],
+        [3, 6, 9, 12],
+        [4, 8, 12, 16],
+        [25, 20, 15, 10],
+      ];
+      
+      
+      const newarr = [];
+      
+    
+      for (let i = 0; i < array[0].length; i++) {
+        newarr[i] = [];
+        
+        for (let j = 0; j < array.length; j++) {
+          newarr[i][j] = array[j][i];
+        }
+      }
+      
+      console.log(newarr);
+      </script>
+</body>
+</html>

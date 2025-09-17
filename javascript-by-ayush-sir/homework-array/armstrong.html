@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armstrong Number</title>
+  </head>
+  <body>
+    <script>
+      let num = 153
+      
+      ikm9 ;
+
+      let str = num.toString();
+      let x = parseInt(str.slice(0, 1)); // first digit
+      let y = parseInt(str.slice(1, 2)); // second digit
+      let z = parseInt(str.slice(2, 3));
+
+      let sum = (x * x * x) + (y * y * y) + (z * z * z);
+
+      if (sum == num) {
+        console.log( num  + " Armstrong Num");
+      } else {
+        console.log(num +   " Not Armstrong Num");
+      }
+    </script>
+  </body>
+</html>

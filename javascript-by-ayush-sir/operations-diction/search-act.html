@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Actors</title>
+  </head>
+  <body>
+    <h1 id="display"></h1>
+    <script src="./actors-data.js"></script>
+    <script>
+      let searchLetter = prompt("Enter the starting letter of actor names:");
+      let result = [];
+
+      for (let d of newData2) {
+        if (d.name.charAt(0).toUpperCase() === searchLetter.toUpperCase()) {
+          result.push(d.name);
+        }
+      }
+      document.getElementById("display").innerHTML = result;
+      console.log("Actors starting with '" + searchLetter + "':", result);
+
+      //   using slice fucntion
+      let search = prompt("Enter the starting letter of actor names:");
+      let getresult = [];
+
+      for (let d of newData2) {
+        if (d.name.slice(0, 1).toUpperCase() === search.toUpperCase()) {
+          getresult.push(d.name);
+        }
+      }
+
+      console.log("Actors starting with '" + searchLetter + "':", getresult);
+    </script>
+  </body>
+</html>

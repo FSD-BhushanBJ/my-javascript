@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Increament</title>
+</head>
+<body>
+    <button onclick="change()">Change</button>
+    <pre id="display"></pre>
+    <script>
+        const arr = [
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+        [0,0,0,0],
+      ]
+
+      let a = 1
+      let count = 1
+      let x = 0
+      let y = 0
+      function change(){
+        arr[x][y] = "a" + count
+        y++;
+        count++;
+        a++;
+        if(a == 5){
+            y = 0;
+            x++
+            a=1
+        }
+        document.getElementById("display").innerHTML = arr
+      }
+     
+      console.log(arr)
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class One Of Array</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="submit()">Submit</button>
+    <script>
+        function submit(){
+             let array = []
+             let i = 1
+             while(i<=5){
+                let input = prompt("enter a number")
+                array.push(input)
+                i++
+             }
+
+
+             console.log(array)
+
+
+            const arraytwo = [10,20,40,50,60]
+            let j = 0
+           while(j <= arraytwo.length -1){
+            console.log(arraytwo[j])
+            j++
+           }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MultiDimensional Array</title>
+  </head>
+  <body>
+    <script>
+      let marks = [
+        [80, 40, 60, 85],
+        [78, 50, 65, 87],
+        [89, 25, 45, 74],
+      ];
+
+      // even marks only
+
+      //   for (let i = 0; i < marks.length; i++) {
+      //     for (let j = 0; j < marks[i].length; j++) {
+      //       if (marks[i][j] % 2 === 0) {
+      //         // check divisible by 2
+      //         console.log(marks[i][j] + " is even");
+      //       }
+      //     }
+      //   }
+
+      //   for last value print only
+      //   for (let i = 0; i < marks.length; i++) {
+      //     console.log(marks[i][marks[i].length - 1]);
+      //   }
+
+      for (let i = 0; i < marks.length; i++) {
+        console.log(marks[i][marks[i].length - (i + 1)]);
+      }
+
+      // for(let i = 0; i <=marks.length -1;i++){
+      //     for(let j = 1;j<=3;j++){
+      //         console.log(marks[i][marks[i].length-j])
+      //     }
+      // }
+    </script>
+  </body>
+</html>

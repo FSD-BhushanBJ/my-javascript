@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D Array Class</title>
+  </head>
+  <body>
+    <script>
+      //   const array = [
+      //     [2, 4, 6, 8],
+      //     [3, 6, 9, 12],
+      //     [4, 8, 12, 16],
+      //     [25, 20, 15, 10],
+      //   ];
+      //   for (let i = 0; i < array.length; i++) {
+      //     array[i].sort((a, b) => b - a);
+      //   }
+
+      //   console.log(array);
+      const array = [
+        [2, 4, 6, 8],
+        [3, 6, 9, 12],
+        [4, 8, 12, 16],
+        [25, 20, 15, 10],
+      ];
+
+    //   decending orders
+    //   for (let i = 0; i < array.length; i++) {
+    //     for (let j = 0; j < array[i].length - 1; j++) {
+    //       for (let k = 0; k < array[i].length - j - 1; k++) {
+    //         if (array[i][k] < array[i][k + 1]) {
+              
+    //           let temp = array[i][k];
+    //           array[i][k] = array[i][k + 1];
+    //           array[i][k + 1] = temp;
+    //         }
+    //       }
+    //     }
+    //   }
+
+    //   console.log(array);
+
+      for (let c of array){
+        for(let e of c){
+            for(let i = 0; i <=c.length-1;i++){
+                if(c[i]< c[i + 1]){
+                    let x = c[i]
+                    c[i]= c[i+1]
+                    c[i+1]=x
+                }
+            }
+        }
+      }
+      console.log(array)
+
+
+    //   avarage
+
+    for(let b = 0; b <=array.length-1;b++){
+        let sum = 0
+        for(let s = 0; s <=array[b].length-1;s++){
+            sum += array[b][s]
+        }
+        let avg = sum/array[b].length
+        console.log("row "+ avg)
+    }
+
+
+    // sum
+    for (let g = 0; g <= array.length-1;g++){
+        let gum = 0
+        for(let r = 0; r <=array[g].length-1;r++){
+            gum += array[g][r]
+        }
+        let gvg = gum + array[g].length
+        console.log("sum " + gvg)
+    }
+    </script>
+  </body>
+</html>

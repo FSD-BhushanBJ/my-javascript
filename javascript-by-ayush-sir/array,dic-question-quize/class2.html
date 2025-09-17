@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checked Vowels in string</title>
+  </head>
+  <body>
+    <script>
+      let str = prompt("Enter a word");
+      let vowels = 0;
+      let consonants = 0;
+
+      str = str.toLowerCase(); 
+
+      for (let i = 0; i < str.length; i++) {
+        let ch = str[i]; 
+
+        if (ch >= "a" && ch <= "z") {
+          if (ch === "a" ||ch === "e" ||ch === "i" ||ch === "o" ||ch === "u") {
+            vowels++;
+          } else {
+            consonants++;
+          }
+        }
+      }
+
+      console.log("String: " + str);
+      console.log("Vowels: " + vowels);
+      console.log("Consonants: " + consonants);
+
+
+    //****************AOC = AOS = 30*****************//
+
+    
+    </script>
+  </body>
+</html>

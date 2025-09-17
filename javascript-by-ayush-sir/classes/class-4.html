@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Power</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <input type="text" id="input-one" />
+      <input type="text" id="input-two" />
+      <button onclick="submit()">Power Number</button>
+      <button onclick="getThat()">Square Root</button>
+      <button onclick="getRandno()">Random num</button>
+      <button onclick="getvalue()">get sign</button>
+      <p id="display"></p>
+    </div>
+    <script>
+
+              // power function
+          function submit(){
+              let num = Number(document.getElementById("input-one").value)
+
+              let power = Number(document.getElementById("input-two").value)
+
+              let result = num
+
+              if(power > 1){
+                  for(let i = 1; i < power; i++){
+                      result *= num
+                  }
+              }else if(power === 0){
+                  alert("enter number one")
+              }
+              else{
+                  alert("program stop")
+              }
+
+              document.getElementById("display").innerHTML = result
+          }
+
+
+          // math function
+          function getThat(){
+              let a = Number(document.getElementById("input-one").value)
+
+              let b = Math.pow(10,5).a;
+
+              let j = Math.sqrt(5,6).a;
+
+              let g = Math.cbrt(6,3).a;
+
+
+              alert(b)
+              alert(j)
+              alert(g)
+
+          }
+
+          function getRandno(){
+
+              let d = Math.random() * 100
+              let b = 0.01 * 10
+
+              let c = Math.floor(d+1)
+
+
+              console.log(b)
+              document.getElementById("display").innerHTML = c
+          }
+
+
+          function getvalue(){
+              let tred = Number(document.getElementById("input-one").value)
+
+              let geted = Math.sign(tred)
+
+
+        //       if (isNaN(tred)) {
+        //   return NaN;
+        // } else if (tred > 0) {
+        //   return 1;
+        // } else if (tred < 0) {
+        //   return -1;
+        // } else {
+        //   return 0;
+        // }
+      
+
+      // Test
+    //   console.log(getSign(10));   // 1
+    //   console.log(getSign(-5));   // -1
+    //   console.log(getSign(0));    // 0
+    //   console.log(getSign("abc"));
+
+             document.getElementById("display").innerHTML = geted
+
+
+
+
+          }
+    </script>
+  </body>
+</html>

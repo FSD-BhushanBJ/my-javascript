@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionery Push</title>
+  </head>
+  <body>
+    <script>
+      let students = [];
+      let x = 0
+     
+
+      let name = prompt("Enter a Name");
+      let age = prompt("Enter a age");
+
+      let softskills = [];
+      let techskills = [];
+      
+
+      for (let i = 0; i < 3; i++) {
+        softskills[softskills.length] = prompt("Enter your softSkills");
+      }
+      for(let j = 0;j < 3; j++){
+          techskills[techskills.length]= prompt("Enter your techskills")
+        }
+    
+      let studentData = { name: name, age: age, softskills: softskills,techskills: techskills };
+
+      students.push(studentData);
+
+      console.log(students);
+    </script>
+  </body>
+</html>

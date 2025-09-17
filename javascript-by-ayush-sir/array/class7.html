@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 7 find out even & odd</title>
+</head>
+<body>
+    <script>
+        
+        let even = 0
+        let array = []
+        let newAr = []
+        for(let i = 1;i <= 10; i++){
+            let input = prompt("Enter Number")
+            array.push(input)
+        }
+        console.log(array)
+
+       
+            for(let j = 0; j<array.length-1;j++){
+                if(array[j]%2 == 0){
+                    even++;
+                    
+                }
+            }
+            for(let r of array){
+                let count = 0
+                let x = r
+                for (let i of array){
+                    if(x === array[i]){
+                        count++
+                    }
+                }
+                console.log(x + " is repeated " + count + " times ")
+            }
+           
+            let y = true
+            for(let a of newAr){
+                if( r == a){
+                    y = false
+                    
+                }
+            }
+            if(y){
+                newAr.push(r)
+            }
+            console.log(newAr)
+
+            
+       
+        console.log("even numbers = " + even)
+        console.log("odd numbers = " + (array.length - even))
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" id="date">
+    <button onclick="agebutton()">SUBMIT</button>
+    <script>
+        function agebutton(){
+            let date = document.getElementById("date").value
+
+            const dd = new Date(date)
+            let birthyear = dd.getFullYear()
+
+            const cd = new Date()
+            let CY = cd.getFullYear()
+
+            let age = CY - birthyear
+            alert(age)
+        }
+    </script>
+</body>
+</html>

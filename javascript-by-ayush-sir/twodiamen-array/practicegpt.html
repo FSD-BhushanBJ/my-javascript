@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [2, 4, 3, 6, 5, 10];
+      let evenCounter = 0; // counter for even numbers
+      let x = 0; // index pointer
+
+      // check even number
+      function checkEven(num) {
+        if (num % 2 === 0) {
+          evenCounter++;
+        }
+      }
+
+      // add number from user
+      function add() {
+        let n1 = Number(prompt("Enter a number:")); // convert string → number
+        return n1 + 2; // add 2
+      }
+
+      // message function
+      function message() {
+        return "number added !";
+      }
+
+      // main function
+      function data() {
+        let i = array[x]; // take element from array
+        checkEven(i); // check if even
+        let n = add(); // take user input + 2
+        array.push(n); // add into array
+        alert(message()); // show message
+        x++; // move to next index
+        console.log("Array:", array);
+        console.log("Even Count:", evenCounter);
+      }
+    </script>
+  </body>
+</html>

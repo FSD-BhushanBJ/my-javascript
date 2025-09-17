@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question with Array</title>
+  </head>
+  <body>
+    <script>
+      array = [
+        {
+          question: "2 + 2 = ?",
+          opt_one:  2,
+          opt_two: 4,
+          ans: 4,
+        },
+        {
+          question: "4 + 4 = ?",
+          opt_one:  8,
+          opt_two:  4,
+          ans: 8,
+        },
+      ];
+
+      for (let i of array) {
+        alert(i.question + "\n 1. " + i.opt_one + "\n 2. " + i.opt_two);
+        let user = prompt("Enter your Ans");
+
+        if (user == i.ans) {
+          alert("correct ans");
+        } else {
+          alert("wrong ans");
+        }
+      }
+
+      // console.log(array[0].question)
+      // console.log(array[0].ans)
+
+      // console.log(array[1].question)
+      // console.log(array[1].ans)
+    </script>
+  </body>
+</html>

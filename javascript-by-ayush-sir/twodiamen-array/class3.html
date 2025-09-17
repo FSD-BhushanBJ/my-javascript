@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions in Functions</title>
+  </head>
+  <body>
+  
+    <button onclick="data()">Data Counter</button>
+    <script>
+      let array = [2, 4, 3, 6, 5, 10];
+      let evenCounter = 0;
+      function evenCount(num) {
+        if (num % 2 == 0) {
+          evenCount++;
+        }
+      }
+
+      function add() {
+        let n1 = Number(prompt("Enter a number:"));
+        return n1 + 2;
+      }
+      function message() {
+        return "number added !";
+      }
+      let x = 0;
+      function data() {
+        let i = array[x];
+        evenCount(i);
+        let n = add();
+        array.push(n);
+        alert(message());
+        x++;
+        console.log("Array:", array);
+        console.log("Even Count:", evenCounter);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUSH Operations in Dictionery</title>
+  </head>
+  <body>
+    <script>
+      let data = {
+        bhushan: {
+          name: "Bhushan",
+          roll: 12,
+          age: 26,
+          skills: "html",
+        },
+        mayank: {
+          name: "Mayank",
+          roll: 15,
+          age: 19,
+          skills: "css",
+        },
+        ashish: {
+          name: "Ashish",
+          roll: 18,
+          age: 20,
+          skills: "Javascript",
+        },
+        shruti: {
+          name: "Shruti",
+          roll: 18,
+          age: 20,
+          skills: "Cummunication",
+        },
+        pratiksir: {
+          name: "Pratik-sir",
+          roll: 18,
+          age: 20,
+          skills: "Maths",
+        },
+      };
+      for (let i = 1; i <= 2; i++) {
+        let key = prompt("enter name" );
+        let name = prompt("enter full name" );
+        let roll = parseInt(prompt("enter roll no"));
+        let age = parseInt(prompt("enter age" ));
+        let skills = prompt("enter a skills");
+
+        data[key]={
+            name :name,
+            roll : roll,
+            age : age,
+            skills : skills
+        };
+      }
+      console.log(data);
+    </script>
+  </body>
+</html>

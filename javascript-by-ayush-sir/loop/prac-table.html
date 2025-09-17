@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="input" placeholder="enter a number">
+    <input type="text" name="" id="input2" placeholder="enter a number 2">
+    <button onclick="getTable()"> get tables</button>
+    <p id="display"></p>
+    <script>
+     
+        function getTable(){
+            let x = Number(document.getElementById("input").value);
+            let y = Number(document.getElementById("input2").value);
+            let table = "";
+            for(let i = 1; i <= y; i++){
+                table += x * i + "<br/>";            
+            }
+            document.getElementById("display").innerHTML = table; 
+        }
+       
+    </script>
+</body>
+</html>
